@@ -47,18 +47,32 @@
       color: #f0f0f0;
     }
 
-    a.btn-customized-2 {
-        margin-left: 5px;
-        margin-right: 5px;
-        padding: .75rem 1.5rem;
-        background: #fff;
-        border: 0;
-        border-radius: 4px;
-        font-size: 16px;
-        font-weight: 300;
-        color: #555;
-        box-shadow: none;
+    .navbar-nav .nav-link {
+      color: #f0f0f0;
+      /* text-shadow: 1.5px 1.5px; */
+      font-weight: bolder;
+      transition: all 0.3s ease-in-out;
     }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+      /* color: #555; */
+      background-color: var(--cameroon-green);
+    }
+
+    a.btn-customized-2 {
+      margin-left: 5px;
+      margin-right: 5px;
+      padding: .75rem 1.5rem;
+      background: #fff;
+      border: 0;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 300;
+      color: #555;
+      box-shadow: none;
+    }
+
     a.btn-customized-2:hover,
     a.btn-customized-2:active,
     a.btn-customized-2:focus,
@@ -66,14 +80,12 @@
     a.btn-customized-2.active:focus,
     a.btn-customized-2.btn.btn-primary:not(:disabled):not(.disabled):active,
     a.btn-customized-2.btn.btn-primary:not(:disabled):not(.disabled):active:focus {
-    outline: 0;
-    background: red;
-    border: 0;
-    color: white;
-    box-shadow: none;
-}
-
-
+      outline: 0;
+      background: red;
+      border: 0;
+      color: white;
+      box-shadow: none;
+    }
 
     /* Hero section styling */
     .hero {
@@ -209,11 +221,11 @@
       <p style="color: green; line-height: 50px ;margin-top: 10px; font-size: 38px; font-weight: 100; text-shadow: 1.5px 1.5px black;">Join us in shaping a brighter future together!</p>
       <div class="row ">
         <div class="col section-bottom-button wow fadeInUp ">
-            <a class="btn btn-light btn-customized-2 " href="/member" aria-label="email" role="button ">
-                <i class="fas fa-handshake"></i> Join Now
-            </a>
+          <a class="btn btn-light btn-customized-2 " href="/member" aria-label="email" role="button ">
+            <i class="fas fa-handshake"></i> Join Now
+          </a>
         </div>
-      </div>  
+      </div>
   </section>
 
   <!-- Key Features Section -->

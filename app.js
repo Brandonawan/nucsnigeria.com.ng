@@ -67,7 +67,7 @@ app.get('/branches', (req, res) => {
 });
 
 app.get('/blog', (req, res) => {
-    res.render('member');
+    res.render('blog');
 });
 
 app.get('/resource', (req, res) => {
