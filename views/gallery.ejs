@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - NUCSN</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+  <style>
+    /* General styling */
+    :root {
+      --cameroon-green: #008000;
+      --cameroon-red: #FF0000;
+      --cameroon-yellow: #FFD700;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header styling */
+    header {
+      background-color: #008000;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    /* Main content styling */
+    .container {
+      flex: 1;
+      padding: 40px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    /* Gallery styling */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-gap: 20px;
+    }
+
+    .gallery-item {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Footer styling */
+    footer {
+      background-color: var(--cameroon-red);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Gallery</h1>
+  </header>
+
+  <!-- Main content -->
+  <div class="container">
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="nucs.png" alt="Event 1">
+        <p>Event 1</p>
+      </div>
+      <div class="gallery-item">
+        <img src="nucs.png" alt="Event 2">
+        <p>Event 2</p>
+      </div>
+      <div class="gallery-item">
+        <img src="nucs.png" alt="Event 3">
+        <p>Event 3</p>
+      </div>
+      <!-- Add more gallery items as needed -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 National Union of Cameroonian Students in Nigeria. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+  </footer>
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
