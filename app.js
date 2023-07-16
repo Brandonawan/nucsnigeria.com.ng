@@ -47,7 +47,7 @@ app.get('/about', (req, res) => {
 });
 
 app.get('/contact', (req, res) => {
-    res.render('index');
+    res.render('contact');
 });
 
 app.get('/gallery', (req, res) => {
@@ -59,11 +59,11 @@ app.get('/member', (req, res) => {
 });
 
 app.get('/news', (req, res) => {
-    res.render('member');
+    res.render('news');
 });
 
 app.get('/branches', (req, res) => {
-    res.render('member');
+    res.render('branches');
 });
 
 app.get('/blog', (req, res) => {
@@ -75,17 +75,12 @@ app.get('/resource', (req, res) => {
 });
 
 app.get('/event', (req, res) => {
-    res.render('resource');
+    res.render('event');
 });
 
 app.get('/student', (req, res) => {
     res.render('student');
 });
-
-// Endpoint to download the Excel file
-app.get('/download-emails', (req, res) => {
-    res.download('emails.xlsx', 'emails.xlsx');
-  });
 
 // Start the server
 app.listen(port, () => {
