@@ -1,346 +1,469 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Modern Business - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="images/nucs.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            .btn-red {
+                color: #fff; /* Text color */
+                background-color: #ff0000; /* Background color */
+                border-color: #ff0000; /* Border color */
+            }
+            .btn-icon {
+                color: #fff; /* Text color */
+                background-color: #ff0000; /* Background color */
+                border-color: #ff0000; /* Border color */
+            }
+            .btn-red:hover {
+                background-color: transparent; /* Set the background color to transparent on hover */
+                border-color: #ff0000; /* Retain the red border color on hover */
+                color: #ff0000; /* Set the text color to red on hover */
+            }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>National Union of Cameroonian Students in Nigeria</title>
-  <!-- Include Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <style>
-    /* Define the colors of the Cameroonian flag */
-    :root {
-      --cameroon-green: #008000;
-      --cameroon-red: #FF0000;
-      --cameroon-yellow: #FFD700;
-    }
-
-    /* General styling */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Header styling */
-    header {
-      background-color: var(--cameroon-green);
-      padding: 20px;
-      color: white;
-    }
-
-    /* Navigation styling */
-    nav {
-      background-color: var(--cameroon-red);
-      color: white;
-      padding: 10px;
-    }
-
-    .logo-img {
-      max-width: 100%;
-      height: auto;
-      max-height: 60px; /* Adjust the value as needed */
-    }
-
-    .navbar-nav {
-      color: #f0f0f0;
-    }
-
-    .navbar-nav .nav-link {
-      color: #f0f0f0;
-      font-weight: bolder;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link:focus {
-      background-color: var(--cameroon-green);
-    }
-
-    a.btn-customized-2 {
-      margin-left: 5px;
-      margin-right: 5px;
-      padding: .75rem 1.5rem;
-      background: #fff;
-      border: 0;
-      border-radius: 4px;
-      font-size: 16px;
-      font-weight: 300;
-      color: #555;
-      box-shadow: none;
-    }
-
-    a.btn-customized-2:hover,
-    a.btn-customized-2:active,
-    a.btn-customized-2:focus,
-    a.btn-customized-2:active:focus,
-    a.btn-customized-2.active:focus,
-    a.btn-customized-2.btn.btn-primary:not(:disabled):not(.disabled):active,
-    a.btn-customized-2.btn.btn-primary:not(:disabled):not(.disabled):active:focus {
-      outline: 0;
-      background: red;
-      border: 0;
-      color: white;
-      box-shadow: none;
-    }
-
-    /* Hero section styling */
-    .hero {
-      background-image: url('images/2.jpg');
-      background-size: cover;
-      background-position: center;
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    .hero h2 {
-      color: white;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    .hero p {
-      color: green;
-      margin-top: 20px;
-      font-size: 24px;
-      font-weight: 100;
-    }
-
-    /* Key features section styling */
-    .key-features {
-      background-color: var(--cameroon-yellow);
-      padding: 40px;
-      text-align: center;
-    }
-
-    .key-features h2 {
-      color: var(--cameroon-red);
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    /* Upcoming events section styling */
-    .upcoming-events {
-      background-color: #f0f0f0;
-      padding: 40px;
-    }
-
-    .upcoming-events h2 {
-      color: var(--cameroon-red);
-      font-weight: 600;
-    }
-
-    /* Latest news section styling */
-    .latest-news {
-      background-color: #fff;
-      padding: 40px;
-    }
-
-    .latest-news h2 {
-      color: var(--cameroon-red);
-      font-weight: 600;
-    }
-
-    /* Branches section styling */
-    .branches {
-      background-color: var(--cameroon-green);
-      padding: 40px;
-      color: white;
-    }
-
-    .branches h2 {
-      color: var(--cameroon-red);
-      font-weight: 600;
-    }
-
-    /* Testimonials section styling */
-    .testimonials {
-      background-color: #f0f0f0;
-      padding: 40px;
-    }
-
-    .testimonials h2 {
-      color: var(--cameroon-red);
-      font-weight: 600;
-    }
-
-    /* Footer styling */
-    footer {
-      background-color: var(--cameroon-red);
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    footer a {
-      color: white;
-      text-decoration: none;
-    }
-  </style>
-</head>
-
-<body>
-  <!-- Header -->
-  <header>
-    <h1>National Union of Cameroonian Students in Nigeria</h1>
-  </header>
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="images/nucs.png" alt="NUCS Logo" class="logo-img">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/branches">Branches</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/news">News</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/event">Events</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/member">Membership</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/student">Student Support</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/resource">Resources</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/blog">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h2 class="mb-4">Empowering Cameroonian Students in Nigeria</h2>
-      <p class="text-success mb-5">Join us in shaping a brighter future together!</p>
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-6">
-          <a class="btn btn-light btn-customized-2" href="/member" aria-label="email" role="button">
-            <i class="fas fa-handshake me-2"></i> Join Now
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Key Features Section -->
-  <section class="key-features">
-    <div class="container">
-      <h2>Why Join Us?</h2>
-      <p class="text-success mb-5">Experience a supportive community, networking opportunities, academic assistance, and cultural exchange.</p>
-    </div>
-  </section>
-
-  <!-- Upcoming Events Section -->
-  <section class="upcoming-events">
-    <div class="container">
-      <h2>Upcoming Events</h2>
-      <ul>
-        <li>Event 1 - Date</li>
-        <li>Event 2 - Date</li>
-        <li>Event 3 - Date</li>
-      </ul>
-    </div>
-  </section>
-
-<!-- Latest News Section -->
-<section class="latest-news">
-  <div class="container">
-    <h2>Latest News</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <h3>The 44th NUCS National Convention</h3>
-        <p>Summary of the news article...</p>
-        <a href="#">Read More</a>
-      </div>
-      <div class="col-md-6">
-        <h3>NUCS New National Executive</h3>
-        <p>Summary of the news article...</p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-    <div class="inspirational-design">
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <img src="images/convention2.jpeg" alt="Inspirational Design" class="img-fluid">
-        </div>
-        <div class="col-md-6">
-          <img src="images/convention1.jpeg" alt="Inspirational Design" class="img-fluid">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+            #backToTopBtn {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                display: none;
+                }
 
 
-  <!-- Branches Section -->
-  <section class="branches">
-    <div class="container">
-      <h2>Our Branches</h2>
-      <p>Discover our branches across Nigeria and get involved in your local community.</p>
-      <div class="inspirational-design">
-        <img src="https://via.placeholder.com/600x400" alt="Inspirational Design" class="img-fluid">
-      </div>
-    </div>
-  </section>
+        </style>
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html">National Union Of Cameroon Students(NUCS), Nigeria</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                                <li><a class="dropdown-item" href="#nucs">NUCS</a></li>
+                                  <li><a class="dropdown-item" href="">Membership</a></li>
+                                  <li><a class="dropdown-item" href="">Branches</a></li>
+                                  <li><a class="dropdown-item" href="">Team</a></li>
+                              </ul>
+                          </li>
+                            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                                    <li><a class="dropdown-item" href="">Blog Home</a></li>
+                                    <li><a class="dropdown-item" href="">latest Post</a></li>
+                                    <li><a class="dropdown-item" href="#newsletter">Newsletter</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Student Suport</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                                    <li><a class="dropdown-item" href="#">Scholarships</a></li>
+                                    <li><a class="dropdown-item" href="#">Internships</a></li>
+                                    <li><a class="dropdown-item" href="#">Career Guidance</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Header-->
+            <header class="bg-dark py-5">
+                <div class="container px-5">
+                  <div class="row gx-5 align-items-center justify-content-center">
+                    <div class="col-lg-8 col-xl-7 col-xxl-6">
+                      <div class="my-5 text-center text-xl-start">
+                        <h1 class="display-5 fw-bolder text-white mb-2">Connecting, Informing and Empowering ...</h1>
+                        <p class="lead fw-normal text-white-50 mb-4">Join us in shaping a brighter future together!</p>
+                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                          <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features"><i class="fas fa-handshake me-2"></i> Join Now</a>
+                          <a class="btn btn-red btn-lg px-4" href="#!">Learn More</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-5 col-lg-6 col-xl-5 col-xxl-6 text-center">
+                      <img class="img-fluid rounded-3 my-5" src="images/nucs.png" alt="..." />
+                    </div>
+                  </div>
+                </div>
+              </header>
+              
+            <!-- Features section-->
+            <section class="py-5" id="nucs">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">A better way to start building.</h2></div>
+                        <div class="col-lg-8">
+                            <div class="row gx-5 row-cols-1 row-cols-md-2">
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="fas fa-bullseye"></i></div>
+                                    <h2 class="h5">Our Mission</h2>
+                                    <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                                </div>
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="fas fa-history"></i></div>
+                                    <h2 class="h5">Our History</h2>
+                                    <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                                </div>
+                                <div class="col h-100">
+                                  <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="fas fa-users"></i></div>
+                                  <h2 class="h5">Our Leadership</h2>
+                                  <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                              </div>
+                                <div class="col mb-5 mb-md-0 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="fas fa-bullseye"></i></div>
+                                    <h2 class="h5">Our Objectives</h2>
+                                    <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonial section-->
+            <div class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-10 col-xl-7">
+                            <div class="text-center">
+                                <div class="fs-4 mb-4 fst-italic">"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad"</div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                  <img class="rounded-circle me-3" src="images/nucs.png" alt="..." width="40" height="40" />
+                                  <div class="fw-bold">
+                                    Sounjoh Mercy
+                                    <span class="fw-bold text-primary mx-1">/</span>
+                                    President General, NUCS
+                                  </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog preview section-->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                            <div class="text-center">
+                                <h2 class="fw-bolder">From our blog</h2>
+                                <p class="lead fw-normal text-muted mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5">
+                            <div class="card h-100 shadow border-0">
+                                <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
+                                <div class="card-body p-4">
+                                    <div class="badge bg-success bg-gradient rounded-pill mb-2">News</div>
+                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Blog post title</h5></a>
+                                    <p class="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
+                                            <div class="small">
+                                                <div class="fw-bold">Brandon Awan</div>
+                                                <div class="text-muted">March 12, 2023 &middot; 6 min read</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-5">
+                            <div class="card h-100 shadow border-0">
+                                <img class="card-img-top" src="https://dummyimage.com/600x350/adb5bd/495057" alt="..." />
+                                <div class="card-body p-4">
+                                    <div class="badge btn-icon bg-gradient rounded-pill mb-2">Media</div>
+                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Another blog post title</h5></a>
+                                    <p class="card-text mb-0">This text is a bit longer to illustrate the adaptive height of each card. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
+                                            <div class="small">
+                                                <div class="fw-bold">Vianney Kamayou</div>
+                                                <div class="text-muted">March 23, 2023 &middot; 4 min read</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-5">
+                            <div class="card h-100 shadow border-0">
+                                <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="..." />
+                                <div class="card-body p-4">
+                                    <div class="badge bg-warning bg-gradient rounded-pill mb-2">News</div>
+                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">The last blog post title is a little bit longer than the others</h5></a>
+                                    <p class="card-text mb-0">Some more quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
+                                            <div class="small">
+                                                <div class="fw-bold">Webnjoh Emile</div>
+                                                <div class="text-muted">April 2, 2023 &middot; 10 min read</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Call to action-->
+                    <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5" id="newsletter">
+                        <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
+                            <div class="mb-4 mb-xl-0">
+                                <div class="fs-3 fw-bold text-white">New products, delivered to you.</div>
+                                <div class="text-white-50">Sign up for our newsletter for the latest updates.</div>
+                            </div>
+                            <div class="ms-xl-4">
+                                <div class="input-group mb-2">
+                                    <input class="form-control" type="text" placeholder="Email address..." aria-label="Email address..." aria-describedby="button-newsletter" />
+                                    <button class="btn btn-outline-light" id="button-newsletter" type="button">Sign up</button>
+                                </div>
+                                <div class="small text-white-50">We care about privacy, and will never share your data.</div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+            <section class="py-5" id="faq">
+                <div class="container px-5 my-5">
+                    <div class="text-center mb-5">
+                        <h1 class="fw-bolder">Frequently Asked Questions</h1>
+                        <p class="lead fw-normal text-muted mb-0">How can we help you?</p>
+                    </div>
+                    <div class="row gx-5">
+                        <div class="col-xl-8">
+                            <!-- FAQ Accordion 1-->
+                            <h2 class="fw-bolder mb-3">Account &amp; Billing</h2>
+                            <div class="accordion mb-5" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Accordion Item #1</button></h3>
+                                    <div class="accordion-collapse collapse show" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong>This is the first item's accordion body.</strong>
+                                            It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+                                            <code>.accordion-body</code>
+                                            , though the transition does limit overflow.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Accordion Item #2</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong>This is the second item's accordion body.</strong>
+                                            It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+                                            <code>.accordion-body</code>
+                                            , though the transition does limit overflow.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Accordion Item #3</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseThree" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong>This is the third item's accordion body.</strong>
+                                            It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+                                            <code>.accordion-body</code>
+                                            , though the transition does limit overflow.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ Accordion 2-->
+                            <h2 class="fw-bolder mb-3">Website Issues</h2>
+                            <div class="accordion mb-5 mb-xl-0" id="accordionExample2">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">Accordion Item #1</button></h3>
+                                    <div class="accordion-collapse collapse show" id="collapseOne2" aria-labelledby="headingOne" data-bs-parent="#accordionExample2">
+                                        <div class="accordion-body">
+                                            <strong>This is the first item's accordion body.</strong>
+                                            It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+                                            <code>.accordion-body</code>
+                                            , though the transition does limit overflow.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">Accordion Item #2</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseTwo2" aria-labelledby="headingTwo" data-bs-parent="#accordionExample2">
+                                        <div class="accordion-body">
+                                            <strong>This is the second item's accordion body.</strong>
+                                            It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+                                            <code>.accordion-body</code>
+                                            , though the transition does limit overflow.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree2" aria-expanded="false" aria-controls="collapseThree2">Accordion Item #3</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseThree2" aria-labelledby="headingThree" data-bs-parent="#accordionExample2">
+                                        <div class="accordion-body">
+                                            <strong>This is the third item's accordion body.</strong>
+                                            It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+                                            <code>.accordion-body</code>
+                                            , though the transition does limit overflow.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="card border-0 bg-light mt-xl-5">
+                                <div class="card-body p-4 py-lg-5">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <div class="text-center">
+                                            <div class="h6 fw-bolder">Have more questions?</div>
+                                            <p class="text-muted mb-4">
+                                                Contact us at
+                                                <br />
+                                                <a href="#!">support@domain.com</a>
+                                            </p>
+                                            <div class="h6 fw-bolder">Follow us</div>
+                                            <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-twitter"></i></a>
+                                            <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-facebook"></i></a>
+                                            <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-linkedin"></i></a>
+                                            <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-youtube"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="py-5" id="contact">
+                <div class="container px-5">
+                    <!-- Contact form-->
+                    <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+                        <div class="text-center mb-5">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="fa fa-envelope"></i></div>
+                            <h1 class="fw-bolder">Get in touch</h1>
+                            <p class="lead fw-normal text-muted mb-0">We'd love to hear from you.</p>
+                        </div>
+                        <div class="row gx-5 justify-content-center">
+                            <div class="col-lg-8 col-xl-6">
+                                <form id="contactForm" action="/send-email" method="post">
+                                    <!-- Name input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                        <label for="name">Full name</label>
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                    </div>
+                                    <!-- Email address input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="email" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                        <label for="email">Email address</label>
+                                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                    </div>
+                                    <!-- Phone number input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" name="phone" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                        <label for="phone">Phone number</label>
+                                        <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                                    </div>
+                                    <!-- Message input-->
+                                    <div class="form-floating mb-3">
+                                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                        <label for="message">Message</label>
+                                        <div class="invalid-feedback" name="message" data-sb-feedback="message:required">A message is required.</div>
+                                    </div>
+                                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                    <!-- Submit Button-->
+                                    <button type="submit" class="btn btn-primary">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Contact cards-->
+                    <div class="row gx-5 row-cols-2 row-cols-lg-4 py-5">
+                        <div class="col">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="fa fa-envelope"></i></div>
+                            <div class="h5 mb-2">Email us</div>
+                            <p class="text-muted mb-0">nucsn@gmail.com.</p>
+                        </div>
+                        <div class="col">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-telephone"></i></div>
+                            <div class="h5">Call us</div>
+                            <p class="text-muted mb-0">Call us during normal business hours at (+234) 7042291346.</p>
+                        </div>
+                        <div class="col">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-question-circle"></i></div>
+                            <div class="h5">Support center</div>
+                            <p class="text-muted mb-0">Browse FAQ's and support articles to find solutions.</p>
+                        </div>
+                        <div class="col">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-people"></i></div>
+                            <div class="h5">Ask the community</div>
+                            <p class="text-muted mb-0">We are building a community forums to communicate with other members.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <button id="backToTopBtn" class="btn btn-primary" onclick="scrollToTop()">&#8593; Back to Top</button>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white"> &copy; National Union of Cameroonian Students, Nigeria. All rights reserved. 2023</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script>
+            window.addEventListener('scroll', function() {
+            var backToTopBtn = document.getElementById('backToTopBtn');
+            if (window.scrollY > 500) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+            });
 
-  <!-- Testimonials Section -->
-  <section class="testimonials">
-    <div class="container">
-      <h2>What Our Members Say</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <blockquote>
-            <p>"Joining the union has been an incredible experience. It has provided me with valuable connections and support during my studies."</p>
-            <cite>- John Doe, Member</cite>
-          </blockquote>
-        </div>
-        <div class="col-md-6">
-          <blockquote>
-            <p>"The union has allowed me to celebrate my Cameroonian heritage and meet amazing friends along the way."</p>
-            <cite>- Jane Smith, Member</cite>
-          </blockquote>
-        </div>
-      </div>
-      <div class="inspirational-design">
-        <img src="https://via.placeholder.com/600x400" alt="Inspirational Design" class="img-fluid">
-      </div>
-    </div>
-  </section>
+            function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            }
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2023 National Union of Cameroonian Students in Nigeria. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-    </div>
-  </footer>
-
-  <!-- Include Bootstrap JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
-</body>
-
+        </script>
+    </body>
 </html>

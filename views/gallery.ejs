@@ -3,105 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery - NUCSN</title>
-  <!-- Include Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+  <title>Gallery</title>
   <style>
-    /* General styling */
-    :root {
-      --cameroon-green: #008000;
-      --cameroon-red: #FF0000;
-      --cameroon-yellow: #FFD700;
-    }
-
+    /* Add your desired color scheme here */
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      background-color: #f5f5f5;
     }
-
-    /* Header styling */
-    header {
-      background-color: #008000;
-      padding: 20px;
-      color: white;
-      text-align: center;
-    }
-
-    /* Main content styling */
-    .container {
-      flex: 1;
-      padding: 40px;
-    }
-
-    h1 {
-      margin-bottom: 30px;
-    }
-
-    /* Gallery styling */
+    
     .gallery {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .gallery h2 {
+      text-align: center;
+      color: #333;
+    }
+    
+    .gallery .photos {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       grid-gap: 20px;
+      margin-top: 20px;
     }
-
-    .gallery-item {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: center;
+    
+    .gallery .photo {
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-
-    /* Footer styling */
-    footer {
-      background-color: var(--cameroon-red);
-      color: white;
-      padding: 20px;
-      text-align: center;
-      flex-shrink: 0;
+    
+    .gallery .photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease-in-out;
     }
-
-    footer a {
-      color: white;
-      text-decoration: none;
+    
+    .gallery .photo img:hover {
+      transform: scale(1.05);
+    }
+    
+    @media (max-width: 767px) {
+      .gallery .photos {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <h1>Gallery</h1>
-  </header>
-
-  <!-- Main content -->
-  <div class="container">
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="nucs.png" alt="Event 1">
-        <p>Event 1</p>
+  <div class="gallery">
+    <h2>Gallery</h2>
+    <div class="photos">
+      <div class="photo">
+        <img src="images/convention2.jpeg" alt="Event 1">
       </div>
-      <div class="gallery-item">
-        <img src="nucs.png" alt="Event 2">
-        <p>Event 2</p>
+      <div class="photo">
+        <img src="images/convention2.jpeg" alt="Event 2">
       </div>
-      <div class="gallery-item">
-        <img src="nucs.png" alt="Event 3">
-        <p>Event 3</p>
+      <div class="photo">
+        <img src="images/convention2.jpeg" alt="Event 3">
       </div>
-      <!-- Add more gallery items as needed -->
+      <!-- Add more photo elements as needed -->
     </div>
   </div>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2023 National Union of Cameroonian Students in Nigeria. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-    </div>
-  </footer>
-
-  <!-- Include Bootstrap JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

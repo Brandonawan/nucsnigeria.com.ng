@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - NUCSN</title>
   <!-- Include Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
   <style>
     /* General styling */
     :root {
-      --cameroon-green: #008000;
-      --cameroon-red: #FF0000;
-      --cameroon-yellow: #FFD700;
+      --primary-color: #008000;
+      --secondary-color: #FF0000;
+      --accent-color: #FFD700;
+      --text-color: #333333;
+      --background-color: #f0f0f0;
     }
 
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      color: var(--text-color);
+      background-color: var(--background-color);
     }
 
     /* Header styling */
     header {
-      background-color: #008000;
+      background-color: var(--primary-color);
       padding: 20px;
       color: white;
       text-align: center;
@@ -39,7 +41,7 @@
 
     /* Mission section styling */
     .mission-section {
-      background-color: var(--cameroon-yellow);
+      background-color: var(--accent-color);
       padding: 40px;
       color: white;
       text-align: center;
@@ -53,7 +55,7 @@
 
     /* Objectives section styling */
     .objectives-section {
-      background-color: #f0f0f0;
+      background-color: var(--background-color);
       padding: 40px;
       text-align: center;
     }
@@ -66,7 +68,7 @@
 
     /* Footer styling */
     footer {
-      background-color: var(--cameroon-red);
+      background-color: var(--secondary-color);
       color: white;
       padding: 20px;
       text-align: center;
@@ -78,6 +80,7 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Header -->
   <header>
@@ -121,4 +124,5 @@
   <!-- Include Bootstrap JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

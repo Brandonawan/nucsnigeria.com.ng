@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -17,7 +18,7 @@ app.use(express.static("public"));
 
 // Connect to MongoDB
 mongoose
-  .connect(process.env.MONGODB_URI, {
+  .connect(process.env.MONGODB_LOCAL_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -81,6 +82,56 @@ app.get('/event', (req, res) => {
 app.get('/student', (req, res) => {
     res.render('student');
 });
+
+app.get('/newsletter', (req, res) => {
+    res.render('newsletter');
+});
+
+app.get('/team', (req, res) => {
+    res.render('team');
+});
+
+
+app.post('/send-email', (req, res) => {
+    const { name, email, phone, message } = req.body;
+  
+    // Create a Nodemailer transporter
+    const transporter = nodemailer.createTransport({
+      service: 'Gmail',
+      auth: {
+        user: 'abibangbrandon855@gmail.com',
+        pass: ''
+      }
+    });
+  
+    // Configure the email details
+    const mailOptions = {
+      from: '',
+      to: 'randontechnologies1@gmail.com',
+      subject: 'New Contact Form Submission',
+      html: `
+        <h3>New Contact Form Submission</h3>
+        <ul>
+          <li>Name: ${name}</li>
+          <li>Email: ${email}</li>
+          <li>Phone: ${phone}</li>
+        </ul>
+        <p>Message: ${message}</p>
+      `
+    };
+  
+    // Send the email
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: 'Error sending message' });
+      } else {
+        console.log('Email sent: ' + info.response);
+        res.status(200).json({ success: true, message: 'Message sent successfully' });
+      }
+    });
+  });
+
 
 // Start the server
 app.listen(port, () => {
