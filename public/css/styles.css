@@ -93,6 +93,11 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
+
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -3754,6 +3759,7 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: space-between;
 }
+
 .navbar-brand {
   padding-top: var(--bs-navbar-brand-padding-y);
   padding-bottom: var(--bs-navbar-brand-padding-y);
@@ -3763,8 +3769,41 @@ textarea.form-control-lg {
   text-decoration: none;
   white-space: nowrap;
 }
-.navbar-brand:hover, .navbar-brand:focus {
+
+/* .navbar-brand:hover, .navbar-brand:focus {
   color: var(--bs-navbar-brand-hover-color);
+}  */
+
+/* Responsive styles for different screen sizes */
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 0.75rem; /* Adjust font size for small screens */
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem; /* Adjust font size for medium screens */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .navbar-brand {
+    font-size: 1.4rem; /* Adjust font size for large screens */
+  }
+}
+
+/* Additional media queries for larger screens if needed */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .navbar-brand {
+    font-size: 1.5rem; /* Adjust font size for extra-large screens */
+  }
+}
+
+@media (min-width: 1201px) {
+  .navbar-brand {
+    font-size: 1.6rem; /* Adjust font size for larger screens */
+  }
 }
 
 .navbar-nav {
@@ -10834,4 +10873,12 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   min-height: 15rem;
+}
+
+@media (max-width: 767px) {
+  .feature {
+    height: calc(100vw * 0.15); /* Adjust the percentage as needed */
+    width: calc(100vw * 0.15); /* Adjust the percentage as needed */
+    font-size: calc(100vw * 0.075); /* Adjust the percentage as needed */
+  }
 }
