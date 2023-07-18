@@ -3731,7 +3731,8 @@ textarea.form-control-lg {
   --bs-navbar-active-color: rgba(0, 0, 0, 0.9);
   --bs-navbar-brand-padding-y: 0.3125rem;
   --bs-navbar-brand-margin-end: 1rem;
-  --bs-navbar-brand-font-size: 1.25rem;
+  /* --bs-navbar-brand-font-size: 1.30rem; */
+  --bs-navbar-brand-font-size: 2rem;
   --bs-navbar-brand-color: rgba(0, 0, 0, 0.9);
   --bs-navbar-brand-hover-color: rgba(0, 0, 0, 0.9);
   --bs-navbar-nav-link-padding-x: 0.5rem;
@@ -3763,7 +3764,7 @@ textarea.form-control-lg {
   justify-content: space-between;
 }
 
-.navbar-brand {
+/* .navbar-brand {
   padding-top: var(--bs-navbar-brand-padding-y);
   padding-bottom: var(--bs-navbar-brand-padding-y);
   margin-right: var(--bs-navbar-brand-margin-end);
@@ -3775,39 +3776,56 @@ textarea.form-control-lg {
 
 .navbar-brand:hover, .navbar-brand:focus {
   color: var(--bs-navbar-brand-hover-color);
-} 
+}  */
+
+.navbar-brand {
+  padding-top: var(--bs-navbar-brand-padding-y);
+  padding-bottom: var(--bs-navbar-brand-padding-y);
+  margin-right: var(--bs-navbar-brand-margin-end);
+  font-size: var(--bs-navbar-brand-font-size);
+  color: var(--bs-navbar-brand-color);
+  text-decoration: none;
+  white-space: nowrap;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+}
+.navbar-brand:hover, .navbar-brand:focus {
+  color: var(--bs-navbar-brand-hover-color);
+}
 
 /* Responsive styles for different screen sizes */
+/*
 @media (max-width: 576px) {
   .navbar-brand {
-    font-size: 0.75rem; /* Adjust font size for small screens */
+    font-size: 0.75rem;
   }
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
   .navbar-brand {
-    font-size: 1.2rem; /* Adjust font size for medium screens */
+    font-size: 1.2rem; 
   }
 }
 
 @media (min-width: 769px) and (max-width: 992px) {
   .navbar-brand {
-    font-size: 1.4rem; /* Adjust font size for large screens */
+    font-size: 1.4rem; 
   }
 }
 
-/* Additional media queries for larger screens if needed */
+
 @media (min-width: 993px) and (max-width: 1200px) {
   .navbar-brand {
-    font-size: 1.5rem; /* Adjust font size for extra-large screens */
+    font-size: 1.5rem;
   }
 }
 
 @media (min-width: 1201px) {
   .navbar-brand {
-    font-size: 1.6rem; /* Adjust font size for larger screens */
+    font-size: 1.6rem; 
   }
 }
+*/
 
 .navbar-nav {
   --bs-nav-link-padding-x: 0;
