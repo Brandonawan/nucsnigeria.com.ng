@@ -16,13 +16,8 @@
         <style>
             .btn-red {
                 color: #fff; /* Text color */
-                background-color: #ff0000; /* Background color */
-                border-color: #ff0000; /* Border color */
-            }
-            .btn-icon {
-                color: #fff; /* Text color */
-                background-color: #ff0000; /* Background color */
-                border-color: #ff0000; /* Border color */
+                background-color: red; /* Background color */
+                border-color: red; /* Border color */
             }
             .btn-red:hover {
                 background-color: transparent; /* Set the background color to transparent on hover */
@@ -50,7 +45,7 @@
       </style>
     </head>
     <body class="d-flex flex-column h-100">
-      <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top"><i class="fas fa-arrow-up"></i></button>
+      <button type="button" class="btn btn-red btn-floating btn-lg" id="btn-back-to-top"><i class="fas fa-arrow-up"></i></button>
         <main class="flex-shrink-0">
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -204,7 +199,7 @@
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top" src="https://dummyimage.com/600x350/adb5bd/495057" alt="..." />
                                 <div class="card-body p-4">
-                                    <div class="badge btn-icon bg-gradient rounded-pill mb-2">Media</div>
+                                    <div class="badge btn-red bg-gradient rounded-pill mb-2">Media</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Another blog post title</h5></a>
                                     <p class="card-text mb-0">This text is a bit longer to illustrate the adaptive height of each card. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 </div>
@@ -461,7 +456,6 @@
                 </div>
             </section>
         </main>
-        <button id="backToTopBtn" class="btn btn-primary" onclick="scrollToTop()">&#8593; Back to Top</button>
         <!-- Footer-->
         <footer class="bg-dark py-4 mt-auto">
             <div class="container px-5">
@@ -490,62 +484,28 @@
         <script>
             let mybutton = document.getElementById("btn-back-to-top");
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () {
-  scrollFunction();
-};
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function () {
+            scrollFunction();
+            };
 
-function scrollFunction() {
-  if (
-    document.body.scrollTop > 20 ||
-    document.documentElement.scrollTop > 20
-  ) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-// When the user clicks on the button, scroll to the top of the document
-mybutton.addEventListener("click", backToTop);
-
-function backToTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-        </script>
-        <script>
-            window.addEventListener('scroll', function() {
-            var backToTopButton = document.getElementById('back-to-top');
-            
-            if (window.scrollY >= 300) {
-                backToTopButton.classList.add('show');
+            function scrollFunction() {
+            if (
+                document.body.scrollTop > 20 ||
+                document.documentElement.scrollTop > 20
+            ) {
+                mybutton.style.display = "block";
             } else {
-                backToTopButton.classList.remove('show');
+                mybutton.style.display = "none";
             }
-            });
-
-            document.getElementById('back-to-top').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        </script>
-        <script>
-            window.addEventListener('scroll', function() {
-            var backToTopBtn = document.getElementById('backToTopBtn');
-            if (window.scrollY > 500) {
-                backToTopBtn.style.display = 'block';
-            } else {
-                backToTopBtn.style.display = 'none';
             }
-            });
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
 
-            function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            function backToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
             }
-
         </script>
         <script>
             document.getElementById('year').innerHTML = (new Date().getFullYear())
