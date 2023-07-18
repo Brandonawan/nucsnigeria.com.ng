@@ -43,11 +43,7 @@ app.use(bodyParser.json());
 
 // Handle GET request to 
 app.get('', (req, res) => {
-    res.render('home');
-});
-
-app.get('/about', (req, res) => {
-    res.render('about');
+  res.render('home', { error: null, message: null });
 });
 
 app.get('/contact', (req, res) => {
@@ -86,67 +82,22 @@ app.get('/student', (req, res) => {
     res.render('student');
 });
 
-app.get('/newsletter', (req, res) => {
-    res.render('newsletter');
-});
-
 app.get('/team', (req, res) => {
     res.render('team');
 });
 
 
-app.post('/send-email', (req, res) => {
-    const { name, email, phone, message } = req.body;
-  
-    // Create a Nodemailer transporter
-    const transporter = nodemailer.createTransport({
-      service: 'Gmail',
-      auth: {
-        user: 'abibangbrandon855@gmail.com',
-        pass: ''
-      }
-    });
-  
-    // Configure the email details
-    const mailOptions = {
-      from: '',
-      to: 'randontechnologies1@gmail.com',
-      subject: 'New Contact Form Submission',
-      html: `
-        <h3>New Contact Form Submission</h3>
-        <ul>
-          <li>Name: ${name}</li>
-          <li>Email: ${email}</li>
-          <li>Phone: ${phone}</li>
-        </ul>
-        <p>Message: ${message}</p>
-      `
-    };
-  
-    // Send the email
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.log(error);
-        res.status(500).json({ success: false, message: 'Error sending message' });
-      } else {
-        console.log('Email sent: ' + info.response);
-        res.status(200).json({ success: true, message: 'Message sent successfully' });
-      }
-    });
-  });
-
-
   // Handle newsletter submission
-  app.post('/notify', async (req, res) => {
+  app.post('/newsletter', async (req, res) => {
     try {
       const { email } = req.body;
       if (!email) {
-        return res.render('index', { message: null, error: 'Email is required' });
+        return res.status(400).json({ message: null, error: 'Email is required' });
       }
   
       const existingEmail = await Email.findOne({ email });
       if (existingEmail) {
-        return res.render('index', { message: 'Email already submitted', error: null });
+        return res.status(400).json({ message: 'Email already submitted', error: null });
       }
   
       const userEmail = await Email.create({ email });
@@ -166,13 +117,12 @@ app.post('/send-email', (req, res) => {
   
       XLSX.writeFile(workbook, 'emails.xlsx');
   
-      return res.render('success', { message: 'Thank you for subscribing. We\'ll notify you when we launch!' });
+      return res.status(200).json({ message: 'Thank you for subscribing..', error: null });
     } catch (error) {
       console.error(error);
-      return res.render('error', { message: null, error: 'Oops! Something went wrong. Please try again later.' });
+      return res.status(500).json({ message: null, error: 'Oops! Something went wrong. Please try again later.' });
     }
   });   
-
 
   // Endpoint to download the Excel file
 app.get('/download-emails', (req, res) => {
