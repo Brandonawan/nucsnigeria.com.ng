@@ -93,10 +93,13 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-html, body {
+/* html, body {
   overflow-x: hidden;
-}
+} */
 
+/* .pagewrapper {
+  overflow-x: hidden;
+} */
 
 hr {
   margin: 1rem 0;
@@ -3770,9 +3773,9 @@ textarea.form-control-lg {
   white-space: nowrap;
 }
 
-/* .navbar-brand:hover, .navbar-brand:focus {
+.navbar-brand:hover, .navbar-brand:focus {
   color: var(--bs-navbar-brand-hover-color);
-}  */
+} 
 
 /* Responsive styles for different screen sizes */
 @media (max-width: 576px) {
@@ -7810,8 +7813,8 @@ textarea.form-control-lg {
 }
 
 .py-5 {
-  padding-top: 3rem !important;
-  padding-bottom: 3rem !important;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
 }
 
 .pt-0 {
@@ -10882,3 +10885,5 @@ html {
     font-size: calc(100vw * 0.075); /* Adjust the percentage as needed */
   }
 }
+
+
