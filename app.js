@@ -86,7 +86,13 @@ app.get('/team', (req, res) => {
     res.render('team');
 });
 
+app.get('/admin', (req, res) => {
+  res.render('admin');
+});
 
+app.get('/tables', (req, res) => {
+  res.render('tables');
+});
   // Handle newsletter submission
   app.post('/newsletter', async (req, res) => {
     try {
