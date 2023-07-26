@@ -15,9 +15,10 @@ const port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 
-// app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
+
+
 
 // Connect to MongoDB
 mongoose
@@ -87,12 +88,13 @@ app.get('/team', (req, res) => {
 });
 
 app.get('/admin', (req, res) => {
-  res.render('admin');
+  res.render('admin/dashboard');
 });
 
 app.get('/tables', (req, res) => {
-  res.render('tables');
+  res.render('admin/tables');
 });
+
   // Handle newsletter submission
   app.post('/newsletter', async (req, res) => {
     try {
