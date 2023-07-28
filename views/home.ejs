@@ -263,8 +263,21 @@
                             <div class="text-white-50">Sign up for our newsletter for the latest news, post, promotions, and <br /> product releases.</div>
                           </div>
                           <div class="ms-xl-4">
+                            <% if (message) { %>
+                                <!-- Display the success message if the user has successfully subscribed -->
+                                <div id="success-message" class="alert alert-success">
+                                  <p><%= message %> 😄</p>
+                                </div>
+                                <script>
+                                  // Automatically hide the success message after a few seconds
+                                  setTimeout(function() {
+                                    const successMessage = document.getElementById('success-message');
+                                    successMessage.style.display = 'none';
+                                  }, 5000); // 5000 milliseconds (5 seconds) before the message disappears
+                                </script>
+                              <% } %>
                             <div class="input-group mb-2">
-                              <form id="newsletter-form" method="POST">
+                            <form action="/newsletter" method="POST" role="form">
                                 <div class="input-group mb-2">
                                   <input class="form-control" type="email" name="email" placeholder="Email address..." aria-label="Email address..." aria-describedby="button-newsletter" required />
                                   <button class="btn btn-outline-light" id="button-newsletter" type="submit">Sign up</button>
@@ -400,26 +413,26 @@
                                 <form id="contactForm" action="/send-email" method="post">
                                     <!-- Name input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                        <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" required />
                                         <label for="name">Full name</label>
                                         <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                                     </div>
                                     <!-- Email address input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="email" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                        <input class="form-control" name="email" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" required />
                                         <label for="email">Email address</label>
                                         <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                                         <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                                     </div>
                                     <!-- Phone number input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" name="phone" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                        <input class="form-control" name="phone" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" required />
                                         <label for="phone">Phone number</label>
                                         <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                                     </div>
                                     <!-- Message input-->
                                     <div class="form-floating mb-3">
-                                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" required></textarea>
                                         <label for="message">Message</label>
                                         <div class="invalid-feedback" name="message" data-sb-feedback="message:required">A message is required.</div>
                                     </div>
@@ -430,6 +443,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <!-- Contact cards-->
                     <div class="row gx-md-5 gx-sm-3 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 py-3 py-md-5">
                         <div class="col">
@@ -527,62 +541,6 @@
         <script>
             document.getElementById('year').innerHTML = (new Date().getFullYear())
         </script>
-        <script>
-            document.getElementById('newsletter-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const emailInput = document.querySelector('[name="email"]');
-            const email = emailInput.value.trim();
-
-            if (!email) {
-                displayMessage(null, 'Email is required', 'error');
-                return;
-            }
-
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', '/newsletter', true);
-            xhr.setRequestHeader('Content-Type', 'application/json');
-
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                const response = JSON.parse(xhr.responseText);
-                displayMessage(response.message, response.error, 'success');
-                } else {
-                const response = JSON.parse(xhr.responseText);
-                displayMessage(response.message, response.error, 'error');
-                }
-
-                // Remove the message after 5 seconds (5000 milliseconds)
-                setTimeout(function() {
-                removeMessage();
-                }, 5000);
-            };
-
-            xhr.onerror = function() {
-                displayMessage(null, 'Oops! Something went wrong. Please try again later.', 'error');
-            };
-
-            xhr.send(JSON.stringify({ email }));
-            });
-
-            function displayMessage(message, error, type) {
-            const messageContainer = document.getElementById('newsletter-message');
-            messageContainer.classList.remove('text-danger', 'text-success');
-
-            if (type === 'error') {
-                messageContainer.classList.add('text-danger');
-            } else if (type === 'success') {
-                messageContainer.classList.add('text-success');
-            }
-
-            messageContainer.textContent = message || error || '';
-            }
-
-            function removeMessage() {
-            const messageContainer = document.getElementById('newsletter-message');
-            messageContainer.textContent = '';
-            }
-
-        </script> 
         <script>
             $(window).on('scroll', function() {
             var testimonialSection = $('.testimonial-section');
